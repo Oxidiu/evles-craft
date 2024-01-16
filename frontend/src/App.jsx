@@ -1,8 +1,19 @@
 import React from 'react'
-
+import Header from "./components/Header.jsx"
+import {Container} from 'react-bootstrap'
+import Footer from './components/Footer.jsx'
+import { Outlet } from 'react-router-dom'
 const App = () => {
   return (
-    <h1>Bine ati venit pe ElvesCraft</h1>
+    <>
+      <Header/>
+      <main>
+        <Container>
+          <Outlet/>
+        </Container>
+      </main>
+      <Footer/>
+    </>
   )
 }
 
