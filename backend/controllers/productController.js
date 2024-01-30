@@ -12,14 +12,14 @@ const getProducts = asyncHandler(async (req, res) => {
 //@desc Fetch a product
 //@route GET /api/products/:id
 //@access Public
-const getProduct = asyncHandler(async (req, res) => {
+const getProductById = asyncHandler(async (req, res) => {
     const product = await Product.findById(req.params.id);
     if (product) {
-        res.json(product);
+        return res.json(product);
     } else {
         res.status(404);
         throw new Error('Product not found')
     };
 })
 
-export {getProducts, getProduct}
+export {getProducts, getProductById}

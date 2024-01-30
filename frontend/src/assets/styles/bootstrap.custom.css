@@ -44,7 +44,7 @@
   --bs-warning-rgb: 243, 156, 18;
   --bs-danger-rgb: 231, 76, 60;
   --bs-light-rgb: 244, 244, 244;
-  --bs-dark-rgb: 123, 138, 139;
+  --bs-dark-rgb: 225, 0, 102;
   --bs-primary-text: #303d4a;
   --bs-secondary-text: #7b8a8b;
   --bs-success-text: #13967d;
@@ -374,10 +374,11 @@ sup {
 
 a {
   color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
-  text-decoration: underline;
+  text-decoration: none;
 }
 a:hover {
   --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
+
 }
 
 a:not([href]):not([class]),
@@ -4018,7 +4019,7 @@ fieldset:disabled .btn {
 .navbar {
   --bs-navbar-padding-x: 0;
   --bs-navbar-padding-y: 0.84rem;
-  --bs-navbar-color: rgba(var(--bs-emphasis-color-rgb), 0.65);
+  --bs-navbar-color: rgba(var(--bs-code-color), 0.65);
   --bs-navbar-hover-color: rgba(var(--bs-emphasis-color-rgb), 0.8);
   --bs-navbar-disabled-color: rgba(var(--bs-emphasis-color-rgb), 0.3);
   --bs-navbar-active-color: rgba(var(--bs-emphasis-color-rgb), 1);
@@ -4453,12 +4454,12 @@ fieldset:disabled .btn {
   --bs-card-spacer-y: 1.2rem;
   --bs-card-spacer-x: 1.2rem;
   --bs-card-title-spacer-y: 0.6rem;
-  --bs-card-title-color: ;
+  --bs-card-title-color: orange;
   --bs-card-subtitle-color: ;
   --bs-card-border-width: var(--bs-border-width);
   --bs-card-border-color: var(--bs-border-color-translucent);
   --bs-card-border-radius: var(--bs-border-radius);
-  --bs-card-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+  --bs-card-box-shadow: 5px 8px 10px rgba(246, 136, 11, 0.5),
     0 2px 4px rgba(255, 20, 20, 0.06);
   --bs-card-inner-border-radius: calc(
     var(--bs-border-radius) - (var(--bs-border-width))
@@ -4468,8 +4469,8 @@ fieldset:disabled .btn {
   --bs-card-cap-bg: rgba(var(--bs-body-color-rgb), 0.03);
   --bs-card-cap-color: ;
   --bs-card-height: ;
-  --bs-card-color: ;
-  --bs-card-bg: var(--bs-body-bg);
+  --bs-card-color: yellow;
+  --bs-card-bg: rgb(152, 26, 231);
   --bs-card-img-overlay-padding: 1.2rem;
   --bs-card-group-margin: 0.75rem;
   position: relative;
@@ -4516,7 +4517,9 @@ fieldset:disabled .btn {
 .card-title {
   margin-bottom: var(--bs-card-title-spacer-y);
   color: var(--bs-card-title-color);
+  text-decoration: none;
 }
+
 
 .card-subtitle {
   margin-top: calc(-0.5 * var(--bs-card-title-spacer-y));
@@ -4591,6 +4594,8 @@ fieldset:disabled .btn {
 .card-img-top {
   border-top-left-radius: var(--bs-card-inner-border-radius);
   border-top-right-radius: var(--bs-card-inner-border-radius);
+  border-bottom-left-radius: var(--bs-card-inner-border-radius);
+  border-bottom-right-radius: var(--bs-card-inner-border-radius);
 }
 
 .card-img,

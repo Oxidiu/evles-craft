@@ -11,7 +11,7 @@ const header = () => {
                 <LinkContainer to='/'>
                     <Navbar.Brand>
                         <img src={logo} alt="PoianaElfilor" />
-                        MagiaElfilor
+                        LumeaElfilor
                     </Navbar.Brand>
                 </LinkContainer>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Platforma de e-commerce Magia Elfilor",
   "type": "module",
+  "proxy": "http://localhost:5173",
   "main": "server.js",
   "scripts": {
     "start": "node backend/server.js",
