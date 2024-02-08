@@ -12,7 +12,7 @@ const HomeScreen = () => {
       {isLoading ? (
         <Loader/>
       ) : error ? (<Message variant={danger}>{error?.data?.message || error.error}</Message>) : (<>
-      <h1>Latest Products</h1>
+      <h1>Cele mai noi produse 🤩</h1>
       <Row>
           {products.map((product) => (
               <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
