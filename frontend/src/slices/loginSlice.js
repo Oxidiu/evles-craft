@@ -11,12 +11,14 @@ const loginSlice = createSlice({
         setCredentials:(state, action) => {
             state.userInfo = action.payload;
             localStorage.setItem("userInfo",JSON.stringify(action.payload))
+        },
+        logout: (state, action) => {
+            state.userInfo = null;
+            localStorage.removeItem('userInfo');
         }
     }
 });
 
-export const { setCredentials } = loginSlice.actions;
-
-// The value we returned from `createSlice` is a "slice" of the Redux store.
+export const { setCredentials, logout } = loginSlice.actions;
 
 export default loginSlice.reducer

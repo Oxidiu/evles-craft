@@ -40,7 +40,11 @@ const LoginScreen = () => {
             dispatch(setCredentials({...res}));
             navigate(redirect);
         } catch (err) {
-            toast.error(err?.data?.message || err.error);
+            if (err.data && err.data.message) {
+                toast.error(err.data.message);
+            } else {
+                toast.error("An error occurred during login.");
+            }
         }
     }
     return (
