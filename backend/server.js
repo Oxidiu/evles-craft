@@ -24,10 +24,6 @@ app.use(cookieParser())
 
 app.use(cors())
 
-app.get('/', (req, res) => {
-    res.send('API is running...');
-})
-
 app.use('/api/products', productRoutes)
 app.use('/api/users', userRoutes)
 
@@ -35,10 +31,10 @@ const __dirname = path.resolve();
 
 if (process.env.NODE_ENV === 'production') {
     // set static folder
-    app.use(express.static(path.join(__dirname, '../frontend/dist')));
+    app.use(express.static(path.join(__dirname, '/frontend/dist')));
 
     // any route that is not api will be redirected to  the home page
-    app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'frontend, build,  index.html')));
+    app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html')));
 } else {
     app.get('/', (req, res) => {
         res.send('API is running...');
