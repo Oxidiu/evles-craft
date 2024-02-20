@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { updateCart } from "../utils/cartUtils";
 
-const initialState = localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : {cartItems: []};
+const initialState = localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : {cartItems: [], shippingAddress: {}, paymentMethod: 'PayPal'};
 
 // Functie de ajutor pentru a rotunji numerele si a adauga 2 zecimale
 
@@ -25,6 +25,10 @@ const cartSlice = createSlice({
             state.cartItems = state.cartItems.filter((x) => x._id !== removeId);
             return updateCart(state)
         },
+        saveShippingAddress: (state, action) => {
+            state.shippingAddress = action.payload;
+            return updateCart(state);
+        },
         changeAmount: (state, action) => {
             const amountData = action.payload;
             const { id, newAmount } = amountData;
@@ -39,6 +43,6 @@ const cartSlice = createSlice({
 
     },
 });
-export const { addToCart, removeFromCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, saveShippingAddress } = cartSlice.actions;
 
 export default cartSlice.reducer
