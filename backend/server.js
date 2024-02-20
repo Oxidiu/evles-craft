@@ -1,3 +1,4 @@
+import path from 'path';
 import express from 'express';
 import dotenv from 'dotenv'
 import cors from 'cors'
@@ -29,6 +30,8 @@ app.get('/', (req, res) => {
 
 app.use('/api/products', productRoutes)
 app.use('/api/users', userRoutes)
+
+const __dirname = path.resolve();
 
 if (process.env.NODE_ENV === 'production') {
     // set static folder
